@@ -6,12 +6,13 @@ import (
 	domain "github.com/popodidi/lambda-protocol/internal/domain/lambda"
 )
 
-type IPFSRepository struct {
+type FSRepository struct {
 }
 
-func NewIPFSRepository() domain.Repository {
-	return &IPFSRepository{}
+func NewFSRepository() domain.Repository {
+	return &FSRepository{}
 }
 
-func (r *IPFSRepository) GetLambada(ctx context.Context, hash string) (*Lambda, error) {
+func (r *FSRepository) GetLambdaByName(ctx context.Context, name string) (*domain.Lambda, error) {
+	return nil, nil
 }

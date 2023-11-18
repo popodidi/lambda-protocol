@@ -6,8 +6,9 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/popodidi/lambda-protocol/pkg/log"
 	"go.uber.org/zap"
+
+	"github.com/popodidi/lambda-protocol/pkg/log"
 )
 
 func GraceCtx(parent context.Context) (ctx context.Context) {

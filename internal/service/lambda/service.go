@@ -16,8 +16,14 @@ type service struct {
 	runtimes map[domain.RuntimeType]domain.Runtime
 }
 
-func NewService() Service {
-	return &service{}
+func NewService(
+	repo domain.Repository,
+	runtimes map[domain.RuntimeType]domain.Runtime,
+) Service {
+	return &service{
+		repo:     repo,
+		runtimes: runtimes,
+	}
 }
 
 func (s *service) Execute(ctx context.Context, lambdaName string, input []byte) ([]byte, error) {
