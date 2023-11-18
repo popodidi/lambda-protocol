@@ -1,0 +1,33 @@
+# jetbrains
+.idea/
+
+# deploy files
+deploy/*.dockerfile
+
+# log files
+log/*
+
+# doc files
+doc/doc.json
+
+# dependency bin
+/bin/*
+!/bin/pentaops
+
+# built files
+_build
+*/_build
+
+# mysql dev files
+/datadir*
+*_datadir
+
+# grpc/protobuf
+*.pb.go
+
+# gomock
+*__mock.go
+
+# credential files
+creds/*
+*/creds
