@@ -53,10 +53,17 @@ define GO_INSTALL_RULE
 $(eval $(call INSTALL_RULE,$1,GOBIN=$(GITROOT)/bin $(GO) get $2))
 endef
 
+ifeq ($(ENV), dev)
 define BUILD_RULE
 $1: pre-build
 	$(GO) build $(GO_BUILD_FULL_OPTS) -o $(BUILDDIR)/$1 $(CMDDIR)/$1
 endef
+else
+define BUILD_RULE
+$1: pre-build
+	GOOS=linux GOARCH=amd64 $(GO) build $(GO_BUILD_FULL_OPTS) -o $(BUILDDIR)/$1 $(CMDDIR)/$1
+endef
+endif
 
 define PROTOC_RULE
 proto-$1:
