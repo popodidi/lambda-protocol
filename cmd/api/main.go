@@ -35,7 +35,7 @@ func main() {
 
 	// prepare service
 	runtimeV8 := adapter.NewRuntimeV8()
-	repo := adapter.NewFSRepository()
+	repo := adapter.NewFSRepository("./lambda")
 	svc := service.NewService(
 		repo,
 		map[domain.RuntimeType]domain.Runtime{

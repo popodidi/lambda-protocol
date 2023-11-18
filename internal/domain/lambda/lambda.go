@@ -3,13 +3,14 @@ package lambda
 import "context"
 
 type Lambda struct {
+	Name     string
 	Metadata Metadata
 	Code     string
 }
 
 type Metadata struct {
-	Hash        string
-	RuntimeType RuntimeType
+	RuntimeType RuntimeType `json:"runtime_type"`
+	CodeFile    string      `json:"code_file"`
 }
 
 type Repository interface {
