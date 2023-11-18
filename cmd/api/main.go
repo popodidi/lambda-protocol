@@ -35,11 +35,11 @@ func main() {
 
 	// prepare service
 	runtimeV8 := adapter.NewRuntimeV8()
-	// repo := adapter.NewFSRepository("./lambda")
-	repo := adapter.NewIPFSRepository(
-		"http://localhost:5001",
-		"QmZHYT3nW1QN1WFqgo7DrUoanJ7UFGSDkr6ADUcF7Xmtk8",
-	)
+	repo := adapter.NewFSRepository("./lambda")
+	// repo := adapter.NewIPFSRepository(
+	// 	"http://localhost:5001",
+	// 	"QmZHYT3nW1QN1WFqgo7DrUoanJ7UFGSDkr6ADUcF7Xmtk8",
+	// )
 	svc := service.NewService(
 		repo,
 		map[domain.RuntimeType]domain.Runtime{
