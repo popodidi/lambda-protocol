@@ -12,11 +12,14 @@ doc/doc.json
 
 # dependency bin
 /bin/*
-!/bin/pentaops
+!/bin/ipfs_docker
 
 # built files
 _build
 */_build
+
+# IPFS
+_ipfs/
 
 # mysql dev files
 /datadir*

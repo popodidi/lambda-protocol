@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+# Setup variables
+: ${GITROOT:="$(git rev-parse --show-toplevel)"}
+
+: ${IPFS_STAGING:="$GITROOT/_ipfs/staging"}
+: ${IPFS_DATA:="$GITROOT/_ipfs/data"}
+: ${IPFS_P2P_PORT:="4001"}
+: ${IPFS_RPC_PORT:="5001"}
+: ${IPFS_GATEWAY_PORT:="8080"}
+
+docker run -d --name ipfs_host \
+	-v $IPFS_STAGING:/export -v \
+	$IPFS_DATA:/data/ipfs \
+	-p $IPFS_P2P_PORT:4001/tcp \
+	-p $IPFS_P2P_PORT:4001/udp \
+	-p $IPFS_RPC_PORT:5001 \
+	-p $IPFS_GATEWAY_PORT:8080 \
+	ipfs/kubo:latest
+
