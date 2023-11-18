@@ -5,9 +5,10 @@ import (
 	"encoding/json"
 	"os"
 
+	"go.uber.org/zap"
+
 	domain "github.com/popodidi/lambda-protocol/internal/domain/lambda"
 	"github.com/popodidi/lambda-protocol/pkg/log"
-	"go.uber.org/zap"
 )
 
 type FSRepository struct {
