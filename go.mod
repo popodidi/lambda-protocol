@@ -9,6 +9,7 @@ require (
 	github.com/stretchr/testify v1.8.3
 	go.opencensus.io v0.24.0
 	go.uber.org/zap v1.26.0
+	rogchap.com/v8go v0.9.0
 )
 
 require (
